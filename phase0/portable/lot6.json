@@ -1,0 +1,52 @@
+[
+ {
+  "label": "s_q5_0_texte-long_seed1",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "seed": 1,
+  "prompt": "a chalkboard menu in a cafe with the text \\\"Menu du jour: soupe a l'oignon, croque-monsieur, tarte tatin\\\" written in neat handwriting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "s_q5_0_texte-long_seed2",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "seed": 2,
+  "prompt": "a chalkboard menu in a cafe with the text \\\"Menu du jour: soupe a l'oignon, croque-monsieur, tarte tatin\\\" written in neat handwriting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "s_q5_0_texte-long_seed3",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "seed": 3,
+  "prompt": "a chalkboard menu in a cafe with the text \\\"Menu du jour: soupe a l'oignon, croque-monsieur, tarte tatin\\\" written in neat handwriting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "s_q5_0_texte-long_seed4",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "seed": 4,
+  "prompt": "a chalkboard menu in a cafe with the text \\\"Menu du jour: soupe a l'oignon, croque-monsieur, tarte tatin\\\" written in neat handwriting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "s_q5_0_texte-long_seed5",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "seed": 5,
+  "prompt": "a chalkboard menu in a cafe with the text \\\"Menu du jour: soupe a l'oignon, croque-monsieur, tarte tatin\\\" written in neat handwriting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ }
+]

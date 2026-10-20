@@ -1,0 +1,11 @@
+[
+ {"label":"g0_vk_q5_0","moteur":"vulkan","modele":"z_image_turbo-Q5_0.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"g1_vk_q8_0","moteur":"vulkan","modele":"z_image_turbo-Q8_0.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"g2_vk_q4_0","moteur":"vulkan","modele":"z_image_turbo-Q4_0.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"g3_vk_q3k","moteur":"vulkan","modele":"z_image_turbo-Q3_K.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"g4_vk_q5_0_768","moteur":"vulkan","modele":"z_image_turbo-Q5_0.gguf","w":768,"h":768,"extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"g5_vk_q5_0_1024","moteur":"vulkan","modele":"z_image_turbo-Q5_0.gguf","w":1024,"h":1024,"extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"g6_vk_q5_0_hires4","moteur":"vulkan","modele":"z_image_turbo-Q5_0.gguf","extra":"--offload-to-cpu --vae-tiling --mmap --hires --hires-width 1024 --hires-height 1024 --hires-steps 4 --hires-denoising-strength 0.6"},
+ {"label":"g7_vk_q5_0_hires8","moteur":"vulkan","modele":"z_image_turbo-Q5_0.gguf","extra":"--offload-to-cpu --vae-tiling --mmap --hires --hires-width 1024 --hires-height 1024 --hires-steps 8 --hires-denoising-strength 0.7"},
+ {"label":"g8_vk_q5_0_easycache","moteur":"vulkan","modele":"z_image_turbo-Q5_0.gguf","extra":"--offload-to-cpu --vae-tiling --mmap --cache-mode easycache"}
+]

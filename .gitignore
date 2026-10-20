@@ -7,3 +7,8 @@ credentials*.json
 *token*.json
 *.token
 .claude/settings.local.json
+
+phase0/moteurs/
+phase0/sortie/
+phase0/modeles/
+__pycache__/

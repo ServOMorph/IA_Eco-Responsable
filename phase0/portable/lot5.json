@@ -1,0 +1,582 @@
+[
+ {
+  "label": "h_q5_0_portrait",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "portrait photo of an elderly fisherman with deep wrinkles and a grey beard, golden hour light, shallow depth of field, highly detailed skin",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_mains",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "close-up photo of a pianist's hands playing a grand piano, detailed fingers, warm stage lighting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_texte-court",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a wooden shop sign that reads \\\"BOULANGERIE DU COIN\\\" hanging above a French bakery entrance, morning light",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_texte-long",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a chalkboard menu in a cafe with the text \\\"Menu du jour: soupe a l'oignon, croque-monsieur, tarte tatin\\\" written in neat handwriting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_francais",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "un chat roux endormi sur le rebord d'une fenetre en bois, pluie fine dehors, ambiance chaleureuse, photographie realiste",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_scene-complexe",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a busy medieval market square at dawn, merchants setting up colourful stalls, a cart of apples in the foreground, a cathedral in the background, crowd of people, volumetric fog",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_objets-multiples",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a red cube on top of a blue sphere, next to a green pyramid, on a white table, three objects only, studio lighting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_illustration",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "children's book illustration of a small fox exploring a magical forest with glowing mushrooms, soft watercolor style",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_produit",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "product photo of a minimalist ceramic coffee mug with steam, on a marble countertop, soft window light, 85mm lens",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_paysage",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a snow-capped mountain reflected in a still alpine lake at sunrise, pine forest in the foreground, ultra detailed, cinematic",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_11-bibliotheque-marees",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "A vast underwater library: endless bookshelves inside a grand submerged architectural hall, books floating in transparent glass bubbles, enormous whales gliding beyond arched windows, shafts of blue-green sunlight filtering through the water, tiny details of sea plants and luminous plankton, cinematic composition, painterly realism with a sense of wonder. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_12-serre-lunaire",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "A glass greenhouse on the Moon, its dome sheltering a lush tropical jungle of palms, giant leaves, vines, orchids and a waterfall; astronauts' small footprints in lunar dust outside, the enormous blue Earth visible through the glass, crisp moonlight contrasted with warm humid greenhouse glow, cinematic science-fantasy concept art. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_13-phare-crabe",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An ancient lighthouse mounted on the back of a colossal walking crab crosses a moonlit beach; its beacon guides tiny flying ships through mist above the sea, foaming waves around the crab's legs, dramatic moon and distant coast, surreal yet believable scale, luminous cinematic painterly realism. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_14-banquet-champignons",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An elegant banquet of tiny anthropomorphic insects dressed in formal attire, dining around a candlelit table beneath an enormous mushroom cap; fireflies hang like lanterns, dew glimmers on moss, delicate dishes and tiny glassware, intimate magical-forest atmosphere, intricate storybook watercolor and gouache. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_15-ville-origami",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An entire fantastical city folds like an intricate origami sculpture around a tiny sun; streets bend into staircases, bridges curl between folded districts, miniature towers and windows catch golden light, impossible yet coherent architecture, strong graphic composition, exquisite paper texture and surreal architectural illustration. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_portrait",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "portrait photo of an elderly fisherman with deep wrinkles and a grey beard, golden hour light, shallow depth of field, highly detailed skin",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_mains",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "close-up photo of a pianist's hands playing a grand piano, detailed fingers, warm stage lighting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_texte-court",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a wooden shop sign that reads \\\"BOULANGERIE DU COIN\\\" hanging above a French bakery entrance, morning light",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_texte-long",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a chalkboard menu in a cafe with the text \\\"Menu du jour: soupe a l'oignon, croque-monsieur, tarte tatin\\\" written in neat handwriting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_francais",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "un chat roux endormi sur le rebord d'une fenetre en bois, pluie fine dehors, ambiance chaleureuse, photographie realiste",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_scene-complexe",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a busy medieval market square at dawn, merchants setting up colourful stalls, a cart of apples in the foreground, a cathedral in the background, crowd of people, volumetric fog",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_objets-multiples",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a red cube on top of a blue sphere, next to a green pyramid, on a white table, three objects only, studio lighting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_illustration",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "children's book illustration of a small fox exploring a magical forest with glowing mushrooms, soft watercolor style",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_produit",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "product photo of a minimalist ceramic coffee mug with steam, on a marble countertop, soft window light, 85mm lens",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_paysage",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a snow-capped mountain reflected in a still alpine lake at sunrise, pine forest in the foreground, ultra detailed, cinematic",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_11-bibliotheque-marees",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "A vast underwater library: endless bookshelves inside a grand submerged architectural hall, books floating in transparent glass bubbles, enormous whales gliding beyond arched windows, shafts of blue-green sunlight filtering through the water, tiny details of sea plants and luminous plankton, cinematic composition, painterly realism with a sense of wonder. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_12-serre-lunaire",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "A glass greenhouse on the Moon, its dome sheltering a lush tropical jungle of palms, giant leaves, vines, orchids and a waterfall; astronauts' small footprints in lunar dust outside, the enormous blue Earth visible through the glass, crisp moonlight contrasted with warm humid greenhouse glow, cinematic science-fantasy concept art. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_13-phare-crabe",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An ancient lighthouse mounted on the back of a colossal walking crab crosses a moonlit beach; its beacon guides tiny flying ships through mist above the sea, foaming waves around the crab's legs, dramatic moon and distant coast, surreal yet believable scale, luminous cinematic painterly realism. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_14-banquet-champignons",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An elegant banquet of tiny anthropomorphic insects dressed in formal attire, dining around a candlelit table beneath an enormous mushroom cap; fireflies hang like lanterns, dew glimmers on moss, delicate dishes and tiny glassware, intimate magical-forest atmosphere, intricate storybook watercolor and gouache. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q4_0_15-ville-origami",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q4_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An entire fantastical city folds like an intricate origami sculpture around a tiny sun; streets bend into staircases, bridges curl between folded districts, miniature towers and windows catch golden light, impossible yet coherent architecture, strong graphic composition, exquisite paper texture and surreal architectural illustration. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_portrait",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "portrait photo of an elderly fisherman with deep wrinkles and a grey beard, golden hour light, shallow depth of field, highly detailed skin",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_mains",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "close-up photo of a pianist's hands playing a grand piano, detailed fingers, warm stage lighting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_texte-court",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a wooden shop sign that reads \\\"BOULANGERIE DU COIN\\\" hanging above a French bakery entrance, morning light",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_texte-long",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a chalkboard menu in a cafe with the text \\\"Menu du jour: soupe a l'oignon, croque-monsieur, tarte tatin\\\" written in neat handwriting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_francais",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "un chat roux endormi sur le rebord d'une fenetre en bois, pluie fine dehors, ambiance chaleureuse, photographie realiste",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_scene-complexe",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a busy medieval market square at dawn, merchants setting up colourful stalls, a cart of apples in the foreground, a cathedral in the background, crowd of people, volumetric fog",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_objets-multiples",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a red cube on top of a blue sphere, next to a green pyramid, on a white table, three objects only, studio lighting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_illustration",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "children's book illustration of a small fox exploring a magical forest with glowing mushrooms, soft watercolor style",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_produit",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "product photo of a minimalist ceramic coffee mug with steam, on a marble countertop, soft window light, 85mm lens",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_paysage",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a snow-capped mountain reflected in a still alpine lake at sunrise, pine forest in the foreground, ultra detailed, cinematic",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_11-bibliotheque-marees",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "A vast underwater library: endless bookshelves inside a grand submerged architectural hall, books floating in transparent glass bubbles, enormous whales gliding beyond arched windows, shafts of blue-green sunlight filtering through the water, tiny details of sea plants and luminous plankton, cinematic composition, painterly realism with a sense of wonder. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_12-serre-lunaire",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "A glass greenhouse on the Moon, its dome sheltering a lush tropical jungle of palms, giant leaves, vines, orchids and a waterfall; astronauts' small footprints in lunar dust outside, the enormous blue Earth visible through the glass, crisp moonlight contrasted with warm humid greenhouse glow, cinematic science-fantasy concept art. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_13-phare-crabe",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An ancient lighthouse mounted on the back of a colossal walking crab crosses a moonlit beach; its beacon guides tiny flying ships through mist above the sea, foaming waves around the crab's legs, dramatic moon and distant coast, surreal yet believable scale, luminous cinematic painterly realism. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_14-banquet-champignons",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An elegant banquet of tiny anthropomorphic insects dressed in formal attire, dining around a candlelit table beneath an enormous mushroom cap; fireflies hang like lanterns, dew glimmers on moss, delicate dishes and tiny glassware, intimate magical-forest atmosphere, intricate storybook watercolor and gouache. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q8_0_15-ville-origami",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q8_0.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An entire fantastical city folds like an intricate origami sculpture around a tiny sun; streets bend into staircases, bridges curl between folded districts, miniature towers and windows catch golden light, impossible yet coherent architecture, strong graphic composition, exquisite paper texture and surreal architectural illustration. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_portrait",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "portrait photo of an elderly fisherman with deep wrinkles and a grey beard, golden hour light, shallow depth of field, highly detailed skin",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_mains",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "close-up photo of a pianist's hands playing a grand piano, detailed fingers, warm stage lighting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_texte-court",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a wooden shop sign that reads \\\"BOULANGERIE DU COIN\\\" hanging above a French bakery entrance, morning light",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_texte-long",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a chalkboard menu in a cafe with the text \\\"Menu du jour: soupe a l'oignon, croque-monsieur, tarte tatin\\\" written in neat handwriting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_francais",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "un chat roux endormi sur le rebord d'une fenetre en bois, pluie fine dehors, ambiance chaleureuse, photographie realiste",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_scene-complexe",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a busy medieval market square at dawn, merchants setting up colourful stalls, a cart of apples in the foreground, a cathedral in the background, crowd of people, volumetric fog",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_objets-multiples",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a red cube on top of a blue sphere, next to a green pyramid, on a white table, three objects only, studio lighting",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_illustration",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "children's book illustration of a small fox exploring a magical forest with glowing mushrooms, soft watercolor style",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_produit",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "product photo of a minimalist ceramic coffee mug with steam, on a marble countertop, soft window light, 85mm lens",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_paysage",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "a snow-capped mountain reflected in a still alpine lake at sunrise, pine forest in the foreground, ultra detailed, cinematic",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_11-bibliotheque-marees",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "A vast underwater library: endless bookshelves inside a grand submerged architectural hall, books floating in transparent glass bubbles, enormous whales gliding beyond arched windows, shafts of blue-green sunlight filtering through the water, tiny details of sea plants and luminous plankton, cinematic composition, painterly realism with a sense of wonder. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_12-serre-lunaire",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "A glass greenhouse on the Moon, its dome sheltering a lush tropical jungle of palms, giant leaves, vines, orchids and a waterfall; astronauts' small footprints in lunar dust outside, the enormous blue Earth visible through the glass, crisp moonlight contrasted with warm humid greenhouse glow, cinematic science-fantasy concept art. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_13-phare-crabe",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An ancient lighthouse mounted on the back of a colossal walking crab crosses a moonlit beach; its beacon guides tiny flying ships through mist above the sea, foaming waves around the crab's legs, dramatic moon and distant coast, surreal yet believable scale, luminous cinematic painterly realism. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_14-banquet-champignons",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An elegant banquet of tiny anthropomorphic insects dressed in formal attire, dining around a candlelit table beneath an enormous mushroom cap; fireflies hang like lanterns, dew glimmers on moss, delicate dishes and tiny glassware, intimate magical-forest atmosphere, intricate storybook watercolor and gouache. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q3k_15-ville-origami",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q3_K.gguf",
+  "w": 512,
+  "h": 512,
+  "prompt": "An entire fantastical city folds like an intricate origami sculpture around a tiny sun; streets bend into staircases, bridges curl between folded districts, miniature towers and windows catch golden light, impossible yet coherent architecture, strong graphic composition, exquisite paper texture and surreal architectural illustration. No lettering, no watermark.",
+  "extra": "--offload-to-cpu --vae-tiling --mmap"
+ },
+ {
+  "label": "h_q5_0_1024_portrait",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 1024,
+  "h": 1024,
+  "prompt": "portrait photo of an elderly fisherman with deep wrinkles and a grey beard, golden hour light, shallow depth of field, highly detailed skin",
+  "extra": "--offload-to-cpu --vae-tiling --mmap",
+  "delai": 1500
+ },
+ {
+  "label": "h_q5_0_1024_texte-court",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 1024,
+  "h": 1024,
+  "prompt": "a wooden shop sign that reads \\\"BOULANGERIE DU COIN\\\" hanging above a French bakery entrance, morning light",
+  "extra": "--offload-to-cpu --vae-tiling --mmap",
+  "delai": 1500
+ },
+ {
+  "label": "h_q5_0_1024_scene-complexe",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 1024,
+  "h": 1024,
+  "prompt": "a busy medieval market square at dawn, merchants setting up colourful stalls, a cart of apples in the foreground, a cathedral in the background, crowd of people, volumetric fog",
+  "extra": "--offload-to-cpu --vae-tiling --mmap",
+  "delai": 1500
+ },
+ {
+  "label": "h_q5_0_1024_paysage",
+  "moteur": "vulkan",
+  "modele": "z_image_turbo-Q5_0.gguf",
+  "w": 1024,
+  "h": 1024,
+  "prompt": "a snow-capped mountain reflected in a still alpine lake at sunrise, pine forest in the foreground, ultra detailed, cinematic",
+  "extra": "--offload-to-cpu --vae-tiling --mmap",
+  "delai": 1500
+ }
+]

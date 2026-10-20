@@ -1,0 +1,12 @@
+[
+ {"label":"b0_base","extra":"--offload-to-cpu --vae-tiling"},
+ {"label":"b1_maxvram0","extra":"--offload-to-cpu --vae-tiling --max-vram 0"},
+ {"label":"b2_fa_off","extra":"--offload-to-cpu --vae-tiling --flash-attn off"},
+ {"label":"b3_convdirect","extra":"--offload-to-cpu --vae-tiling --conv-direct on"},
+ {"label":"b4_eager","extra":"--offload-to-cpu --vae-tiling --eager-load"},
+ {"label":"b5_mmap","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"b6_q4_0","modele":"z_image_turbo-Q4_0.gguf","extra":"--offload-to-cpu --vae-tiling"},
+ {"label":"b7_q2k","modele":"z_image_turbo-Q2_K.gguf","extra":"--offload-to-cpu --vae-tiling"},
+ {"label":"b8_te_q3km","te":"Qwen3-4B-Instruct-2507-Q3_K_M.gguf","extra":"--offload-to-cpu --vae-tiling"},
+ {"label":"b9_te_q4_0","te":"Qwen3-4B-Instruct-2507-Q4_0.gguf","extra":"--offload-to-cpu --vae-tiling"}
+]

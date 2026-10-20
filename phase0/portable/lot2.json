@@ -1,0 +1,16 @@
+[
+ {"label":"c0_mmap","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"c1_mmap_nooff","extra":"--vae-tiling --mmap"},
+ {"label":"c2_mmap_notile","extra":"--offload-to-cpu --mmap"},
+ {"label":"c3_mmap_eager","extra":"--offload-to-cpu --vae-tiling --mmap --eager-load"},
+ {"label":"c4_mmap_vulkan","moteur":"vulkan","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"c5_mmap_q4k","modele":"z_image_turbo-Q4_K.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"c6_mmap_q4_0","modele":"z_image_turbo-Q4_0.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"c7_mmap_q2k","modele":"z_image_turbo-Q2_K.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"c8_mmap_q5_0","modele":"z_image_turbo-Q5_0.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"c9_mmap_q6k","modele":"z_image_turbo-Q6_K.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"d0_mmap_te_q5km","te":"Qwen3-4B-Instruct-2507-Q5_K_M.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"d1_mmap_te_q6k","te":"Qwen3-4B-Instruct-2507-Q6_K.gguf","extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"d2_mmap_768","w":768,"h":768,"extra":"--offload-to-cpu --vae-tiling --mmap"},
+ {"label":"d3_mmap_1024","w":1024,"h":1024,"extra":"--offload-to-cpu --vae-tiling --mmap"}
+]
