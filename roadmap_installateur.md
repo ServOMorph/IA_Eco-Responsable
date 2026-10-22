@@ -6,7 +6,7 @@
 - Exigence minimale utilisateur : GPU avec au moins 4 Go de VRAM, quelle que soit la marque. Le programme détecte la machine et refuse l'installation sous ce seuil.
 - Machine cible de référence (config fournie le 2026-10-18) : MSI GF63 Thin 10SCSR, Intel Core i5-10500H, 8 Go de RAM (7,83 Go utilisables), NVIDIA GeForce GTX 1650 Ti Max-Q 4 Go (carte Turing) + Intel UHD Graphics (double GPU), disque 477 Go dont environ 118 Go libres, Windows 11 Famille 25H2 (build 26200).
 - Objectif de diffusion : fonctionner sur le plus de PC possible, donc plusieurs backends GPU dès la conception ; le support annoncé se limite à ce qui a été testé.
-- Interface : Tauri (hypothèse, à confirmer en phase 1).
+- Interface : Tauri + Rust (choisi le 2026-10-22), projet dans `app/`.
 - Moteur : stable-diffusion.cpp (`sd-cli`, build master-973-f0aac52), backend Vulkan retenu, CUDA en alternative ; options `--mmap --offload-to-cpu --vae-tiling`. Validé en phase 0.
 
 ## Décisions ouvertes
@@ -37,13 +37,15 @@
 **⏸ Checkpoint** — Demander à l'utilisateur de faire `/compact` avant de continuer.
 Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmation.
 
-## Phase 1 — Cœur applicatif [TODO]
+## Phase 1 — Cœur applicatif [EN COURS]
 - Détection de la machine : GPU, VRAM (méthode fiable), RAM, disque libre, pilote ; verdict compatible / lent / non compatible.
 - Sélection automatique du backend (Vulkan par défaut, CUDA en alternative) ; sur double GPU (NVIDIA + Intel intégré), forcer l'usage du GPU NVIDIA.
 - Gestionnaire de modèles : téléchargement avec reprise et vérification d'intégrité, contrôle de l'espace disque.
 - Cycle de vie du moteur : charger, décharger, garde-fou mémoire avant chaque chargement.
 - Génération de contrôle à la fin de l'installation.
 - Tests unitaires et tests d'intégration inclus dans la phase.
+- État au 2026-10-22 : code et 31 tests automatiques en place dans `app/src-tauri/` ; installation et génération de contrôle réussies sur le PC de développement (RTX 4060, 84 s). Écarts : verdict « lent » remplacé par « NonTesté » (pas de mesure) ; pilote vérifié indirectement par la présence d'un périphérique Vulkan ; VRAM libre lue via le compteur Windows « GPU Adapter Memory ».
+- Reste avant [FAIT] : essai sur le portable de référence (double GPU, 8 Go de RAM) et confirmation des seuils du garde-fou, voir `tests_manuels.md`.
 
 **⏸ Checkpoint** — Demander à l'utilisateur de faire `/compact` avant de continuer.
 Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmation.

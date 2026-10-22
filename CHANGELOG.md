@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.2 — 2026-10-22
+
+### Ajouté
+- `app/` : projet Tauri + Rust. Cœur applicatif de la Phase 1 : détection de la machine et verdict, choix du backend Vulkan/CUDA depuis `sd-cli --list-devices`, téléchargement avec reprise et SHA-256, cycle de vie du moteur avec garde-fou mémoire, génération de contrôle. 31 tests automatiques, dont un test réel d'installation (`--ignored`).
+- `tests_manuels.md` : file d'attente des contrôles manuels.
+- Décisions actées : Tauri + Rust ; verdict Compatible / NonTesté / Incompatible ; garde-fou à 5 000 Mo de RAM libre et 3 000 Mo de VRAM libre.
+
+### Corrigé
+- VRAM libre : lecture via le compteur Windows « GPU Adapter Memory » (DXGI ne mesure que le processus appelant et laissait passer une génération vouée à l'échec).
+
 ## v0.1 — 2026-10-20
 
 ### Ajouté
