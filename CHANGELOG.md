@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.3 — 2026-10-22
+
+### Modifié
+- Accès SSH au portable de test relancé (OpenSSH réinstallé par `phase0/portable/activer_ssh.ps1`) pour l'essai de la Phase 1 ; connexion non encore établie, fermeture à refaire après l'essai.
+
 ## v0.2 — 2026-10-22
 
 ### Ajouté

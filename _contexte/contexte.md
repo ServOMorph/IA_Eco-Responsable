@@ -13,7 +13,7 @@ Interface open source pour installer et lancer des IA locales (chat, image) en u
 Phase 0 (faisabilité) terminée : sur le portable cible (GTX 1650 Ti 4 Go, 8 Go de RAM), une image 512x512 prend 67 s.
 Phase 1 en cours : cœur Rust écrit dans `app/src-tauri/` (détection, backend, téléchargement, moteur, contrôle), 31 tests passent, génération de contrôle réussie sur RTX 4060 (84 s).
 Reste pour clore la Phase 1 : essai sur le portable de référence (`tests_manuels.md`).
-Nettoyages du portable et du PC de développement en attente (voir `signals.md`).
+SSH réactivé sur le portable le 2026-10-22 (connexion à établir) ; nettoyages du portable et du PC de développement en attente (voir `signals.md`).
 
 ## Décisions structurantes (append only — 10 entrées max, 5 lignes max/entrée, archiver au-delà)
 - 2026-10-17 : Initialisation du protocole vibecoding.
