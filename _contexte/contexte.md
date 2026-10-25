@@ -10,10 +10,10 @@ Interface open source pour installer et lancer des IA locales (chat, image) en u
 - Chat : hors périmètre immédiat, l'image est le besoin prioritaire.
 
 ## État actuel (réécrit intégralement à chaque /close)
-Phase 0 (faisabilité) terminée : sur le portable cible (GTX 1650 Ti 4 Go, 8 Go de RAM), une image 512x512 prend 67 s.
-Phase 1 en cours : cœur Rust écrit dans `app/src-tauri/` (détection, backend, téléchargement, moteur, contrôle), 31 tests passent, génération de contrôle réussie sur RTX 4060 (84 s).
-Reste pour clore la Phase 1 : essai sur le portable de référence (`tests_manuels.md`).
-SSH réactivé sur le portable le 2026-10-22 (connexion à établir) ; nettoyages du portable et du PC de développement en attente (voir `signals.md`).
+Phase 0 terminée (67 s en 512x512 sur la GTX 1650 Ti). Phase 1 en cours : cœur Rust et 37 tests en place ; une interface minimale de génération (3 formats) fonctionne sur la RTX 4060 (12 à 17 s hors premier passage).
+Mode de déploiement actuel : installation assistée par SSH, en présence de la personne, via la commande `/install_portable` (jamais exécutée).
+Reste pour clore la Phase 1 : essai sur le portable de référence (connexion SSH à établir, voir `signals.md` et `tests_manuels.md`).
+Nettoyages du portable et du PC de développement en attente.
 
 ## Décisions structurantes (append only — 10 entrées max, 5 lignes max/entrée, archiver au-delà)
 - 2026-10-17 : Initialisation du protocole vibecoding.
@@ -23,3 +23,4 @@ SSH réactivé sur le portable le 2026-10-22 (connexion à établir) ; nettoyage
 - 2026-10-20 : Le texte long dans l'image n'est exact que pour une partie des graines : l'interface proposera de regénérer avec une autre variante.
 - 2026-10-20 : Les mesures de faisabilité se font sur la machine réelle (accès SSH temporaire, retiré ensuite) et non en simulation.
 - 2026-10-22 : Stack Tauri + Rust retenue. Verdict machine Compatible / NonTesté / Incompatible (pas de « lent » sans mesure). Garde-fou avant lancement : 5 000 Mo de RAM libre, 3 000 Mo de VRAM libre (VRAM libre lue via le compteur Windows « GPU Adapter Memory », DXGI inutilisable).
+- 2026-10-25 : Réorientation : installation assistée par SSH sur le portable de la personne, en sa présence (commande `/install_portable`), plutôt qu'un installateur grand public. Interface minimale de génération livrée en avance sur la Phase 2. Chat hors périmètre.

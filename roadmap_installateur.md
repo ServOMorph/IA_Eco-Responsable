@@ -45,12 +45,14 @@ Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmati
 - Génération de contrôle à la fin de l'installation.
 - Tests unitaires et tests d'intégration inclus dans la phase.
 - État au 2026-10-22 : code et 31 tests automatiques en place dans `app/src-tauri/` ; installation et génération de contrôle réussies sur le PC de développement (RTX 4060, 84 s). Écarts : verdict « lent » remplacé par « NonTesté » (pas de mesure) ; pilote vérifié indirectement par la présence d'un périphérique Vulkan ; VRAM libre lue via le compteur Windows « GPU Adapter Memory ».
-- Reste avant [FAIT] : essai sur le portable de référence (double GPU, 8 Go de RAM) et confirmation des seuils du garde-fou, voir `tests_manuels.md`.
+- État au 2026-10-25 : 37 tests automatiques. Réorientation (2026-10-25) : installation assistée par SSH, en présence de la personne, via la commande `.claude/commands/install_portable.md` (jamais exécutée). Une interface minimale de génération (description, 3 formats, image affichée) existe déjà (`app/src/`, `app/src-tauri/src/appli.rs`) ; sur RTX 4060 : carré 12 s, paysage 16 s, portrait 102 s puis 17 s.
+- Reste avant [FAIT] : essai sur le portable de référence (double GPU, 8 Go de RAM) avec `/install_portable`, confirmation des seuils du garde-fou, voir `tests_manuels.md`.
 
 **⏸ Checkpoint** — Demander à l'utilisateur de faire `/compact` avant de continuer.
 Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmation.
 
 ## Phase 2 — Interface [TODO]
+- Note 2026-10-25 : un écran minimal est déjà livré (voir Phase 1) ; la suite (onglets Modèles et Installation, paramètres avancés, boutons Charger/Décharger) est à revoir selon la réorientation vers l'installation assistée.
 - Onglet Modèles : liste (Z-Image seul), bouton Installer.
 - Onglet Installation : guidage pas à pas, messages en langage simple.
 - Onglet Génération : texte, format (carré, portrait, paysage), qualité, variante (graine), boutons Charger et Décharger, affichage de l'état mémoire.
@@ -62,6 +64,7 @@ Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmati
 Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmation.
 
 ## Phase 3 — Empaquetage et diffusion [TODO]
+- Note 2026-10-25 : la réorientation vers l'installation assistée par SSH rend cette phase probablement sans objet à court terme ; décision de l'utilisateur à prendre.
 - Installeur Windows, signature selon la décision ouverte, lien de téléchargement sur le site.
 - Écran d'aide en cas d'avertissement SmartScreen si le programme n'est pas signé.
 

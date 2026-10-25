@@ -10,9 +10,9 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "app",
-        "width": 800,
-        "height": 600
+        "title": "Générateur d'images",
+        "width": 820,
+        "height": 760
       }
     ],
     "security": {

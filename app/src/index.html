@@ -1,39 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Générateur d'images</title>
     <script type="module" src="/main.js" defer></script>
   </head>
 
   <body>
-    <main class="container">
-      <h1>Welcome to Tauri</h1>
+    <main>
+      <h1>Générateur d'images</h1>
 
-      <div class="row">
-        <a href="https://tauri.app" target="_blank">
-          <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" />
-        </a>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-          target="_blank"
-        >
-          <img
-            src="/assets/javascript.svg"
-            class="logo vanilla"
-            alt="JavaScript logo"
-          />
-        </a>
-      </div>
-      <p>Click on the Tauri logo to learn more about the framework</p>
+      <p id="alerte" class="alerte" hidden></p>
 
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
+      <form id="formulaire">
+        <label for="description">Décrivez l'image</label>
+        <textarea id="description" rows="3" placeholder="Exemple : une pomme rouge sur une table en bois"></textarea>
+
+        <fieldset>
+          <legend>Format</legend>
+          <label><input type="radio" name="format" value="carre" checked /> Carré</label>
+          <label><input type="radio" name="format" value="portrait" /> Portrait</label>
+          <label><input type="radio" name="format" value="paysage" /> Paysage</label>
+        </fieldset>
+
+        <button type="submit" id="bouton">Générer</button>
       </form>
-      <p id="greet-msg"></p>
+
+      <p id="statut" role="status"></p>
+
+      <figure id="resultat" hidden>
+        <img id="image" alt="Image générée" />
+        <figcaption id="legende"></figcaption>
+      </figure>
+
+      <button type="button" id="dossier" class="secondaire">Ouvrir le dossier des images</button>
     </main>
   </body>
 </html>

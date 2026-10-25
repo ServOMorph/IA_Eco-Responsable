@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.4 — 2026-10-25
+
+### Ajouté
+- `.claude/commands/install_portable.md` : commande d'installation sur un portable distant par SSH (compilation, copie, téléchargement, image de contrôle, raccourci, fermeture du SSH). Jamais exécutée.
+- Interface minimale de génération (`app/src/`, `app/src-tauri/src/appli.rs`) : description, trois formats, image affichée ; racine d'installation déduite de `<dossier>\bin`. 37 tests automatiques.
+- Décision actée : installation assistée par SSH en présence de la personne ; chat hors périmètre.
+
+### Modifié
+- `Cargo.toml` : fonctionnalité `custom-protocol` de Tauri et dépendance `base64`.
+- Mesures sur RTX 4060 : carré 12 s, paysage 16 s, portrait 102 s puis 17 s.
+
 ## v0.3 — 2026-10-22
 
 ### Modifié
