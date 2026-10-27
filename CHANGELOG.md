@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.5 — 2026-10-27
+
+### Ajouté
+- Interface : nombre d'images, historique, suppression, progression, annulation, indicateur de mémoire, nom du modèle, image de référence (écart fixe 0,50), journaux dans `journaux/`.
+- `run.py` : lancement de l'application ; `.claude/commands/connect_portable.md`.
+- `phase0/reference/` : évaluation de l'image de référence (114 générations).
+
+### Modifié
+- Décisions : modification d'image abandonnée ; `sd-server` rejeté.
+
 ## v0.4 — 2026-10-25
 
 ### Ajouté

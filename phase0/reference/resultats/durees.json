@@ -1,0 +1,122 @@
+[
+ {
+  "echec": false,
+  "fichier": "theiere_p0_e090.png",
+  "duree": 13.474127531051636
+ },
+ {
+  "echec": false,
+  "fichier": "theiere_p0_e095.png",
+  "duree": 13.699880361557007
+ },
+ {
+  "echec": false,
+  "fichier": "theiere_p1_e090.png",
+  "duree": 13.292857646942139
+ },
+ {
+  "echec": false,
+  "fichier": "theiere_p1_e095.png",
+  "duree": 13.43146300315857
+ },
+ {
+  "echec": false,
+  "fichier": "voiture_p0_e090.png",
+  "duree": 13.248414993286133
+ },
+ {
+  "echec": false,
+  "fichier": "voiture_p0_e095.png",
+  "duree": 13.199415445327759
+ },
+ {
+  "echec": false,
+  "fichier": "voiture_p1_e090.png",
+  "duree": 13.291901588439941
+ },
+ {
+  "echec": false,
+  "fichier": "voiture_p1_e095.png",
+  "duree": 13.21401858329773
+ },
+ {
+  "echec": false,
+  "fichier": "maison_p0_e090.png",
+  "duree": 13.146639347076416
+ },
+ {
+  "echec": false,
+  "fichier": "maison_p0_e095.png",
+  "duree": 13.17889142036438
+ },
+ {
+  "echec": false,
+  "fichier": "maison_p1_e090.png",
+  "duree": 13.215904235839844
+ },
+ {
+  "echec": false,
+  "fichier": "maison_p1_e095.png",
+  "duree": 13.475398540496826
+ },
+ {
+  "echec": false,
+  "fichier": "fleur_p0_e090.png",
+  "duree": 13.527686595916748
+ },
+ {
+  "echec": false,
+  "fichier": "fleur_p0_e095.png",
+  "duree": 13.65820050239563
+ },
+ {
+  "echec": false,
+  "fichier": "fleur_p1_e090.png",
+  "duree": 13.691190004348755
+ },
+ {
+  "echec": false,
+  "fichier": "fleur_p1_e095.png",
+  "duree": 13.415426015853882
+ },
+ {
+  "echec": false,
+  "fichier": "phare_p0_e090.png",
+  "duree": 13.33240294456482
+ },
+ {
+  "echec": false,
+  "fichier": "phare_p0_e095.png",
+  "duree": 13.244606256484985
+ },
+ {
+  "echec": false,
+  "fichier": "phare_p1_e090.png",
+  "duree": 13.640108823776245
+ },
+ {
+  "echec": false,
+  "fichier": "phare_p1_e095.png",
+  "duree": 13.239508390426636
+ },
+ {
+  "echec": false,
+  "fichier": "chat_p0_e090.png",
+  "duree": 13.122933864593506
+ },
+ {
+  "echec": false,
+  "fichier": "chat_p0_e095.png",
+  "duree": 13.315752983093262
+ },
+ {
+  "echec": false,
+  "fichier": "chat_p1_e090.png",
+  "duree": 13.27936577796936
+ },
+ {
+  "echec": false,
+  "fichier": "chat_p1_e095.png",
+  "duree": 13.554378509521484
+ }
+]

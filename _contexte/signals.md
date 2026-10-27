@@ -1,8 +1,8 @@
-# Signals — IA_Eco-Responsable   (MAJ 2026-10-25)
+# Signals — IA_Eco-Responsable   (MAJ 2026-10-27)
 
 ## Actions ouvertes
 - [P1|ouvert] Faire l'essai sur le portable de référence (GTX 1650 Ti + Intel UHD, 8 Go de RAM) avec `/install_portable <utilisateur@ip>`, puis marquer la Phase 1 [FAIT]
-  - fait quand: la commande va au bout sur le portable ; `controle.png` est valide ; le périphérique Vulkan choisi est la carte NVIDIA ; une image est générée depuis `app.exe` (raccourci du bureau) ; les seuils du garde-fou (5 000 Mo de RAM libre, 3 000 Mo de VRAM libre) sont confirmés ou ajustés ; les 3 contrôles de `tests_manuels.md` sont validés et leurs sections supprimées.
+  - fait quand: la commande va au bout sur le portable ; `controle.png` est valide ; le périphérique Vulkan choisi est la carte NVIDIA ; une image est générée depuis `app.exe` (raccourci du bureau) ; les seuils du garde-fou (5 000 Mo de RAM libre, 3 000 Mo de VRAM libre) sont confirmés ou ajustés ; la génération avec image de référence est essayée (temps, VRAM, garde-fou) ; les contrôles de `tests_manuels.md` sont validés et leurs sections supprimées.
   - réf: `.claude/commands/install_portable.md`, `tests_manuels.md`, `roadmap_installateur.md` (Phase 1), `phase0/portable/activer_ssh.ps1`. Prérequis : connexion SSH non établie. `raph6@192.168.1.187` refusait la clé (publickey) ; il faut le nom d'utilisateur et l'IP affichés par `activer_ssh.ps1` exécuté en administrateur sur le portable (SSH relancé le 2026-10-22). Alternative sans SSH : copier par clé USB l'exécutable du test et `app.exe`. La commande n'a jamais été exécutée : premier usage à surveiller.
 - [P2|ouvert] Comprendre les temps lents de premier passage sur le PC de développement (RTX 4060)
   - fait quand: la cause est identifiée (ou écartée) de 84 s (test de contrôle du 2026-10-22) et 102 s (premier portrait du 2026-10-24), alors que carré, paysage et portrait suivants prennent 12 à 17 s sur la même machine.
@@ -15,28 +15,27 @@
   - fait quand: décision de l'utilisateur appliquée pour `D:\ServOMorph\ComfyUI-Qwen\models` (SD 1.5, SDXL Lightning, Z-Image, text encoder ajoutés pendant les essais), `phase0/moteurs`, `phase0/modeles`, `~/.ssh/id_ed25519_portable_test` et `D:\Dev\ia-eco-test` (environ 7,4 Go de modèles, moteur Vulkan, image de contrôle). Attention : `D:\Dev\ia-eco-test` sert aussi de racine par défaut de l'interface sur ce PC.
   - réf: [à préciser] (inventaire dans la synthèse de session du 2026-10-20).
 
-## Dernière session (2026-10-25)
+## Dernière session (2026-10-27)
 <!-- Écrasé intégralement par /close. Synthèse < 25 lignes. -->
-# Session du 2026-10-25
+# Session du 2026-10-27
 
 ## Décisions prises
-- Réorientation : l'installation se fera en présence de la personne, avec son portable relié par SSH ; Claude lance l'installation, puis l'utilisateur montre la génération. Chat hors périmètre.
-- Commande `/install_portable` : compile et copie un exécutable de test et `app.exe`, télécharge moteur et modèles sur le portable, génère l'image de contrôle, crée le raccourci du bureau, propose la fermeture du SSH.
+- Image de référence conservée avec un écart fixe à 0,50 (plus de curseur) ; fonction de modification d'image abandonnée.
+- Mode serveur `sd-server` rejeté (environ 7,7 Go de RAM résidents, incompatible avec un portable de 8 Go) ; `sd-cli` conservé.
 
 ## Livrables produits ou modifiés
-- `.claude/commands/install_portable.md` : créé, jamais exécuté.
-- `app/src-tauri/src/appli.rs`, `lib.rs`, `Cargo.toml` : interface branchée sur le cœur Rust (3 commandes Tauri, verrou de génération unique, racine déduite de `<dossier>\bin`).
-- `app/src/` (index.html, main.js, styles.css), `tauri.conf.json` : écran de génération en français (description, 3 formats, chronomètre).
-- `tests_manuels.md` : contrôle de l'interface ajouté puis supprimé après validation.
+- `app/` : nombre d'images (1 à 4), historique, suppression, progression, annulation, indicateur de mémoire, nom du modèle, journaux dans `journaux/` (log effacé si succès), image de référence : compilé en release, 40 tests unitaires et 7 de téléchargement passent.
+- `run.py` : lance l'application (`--build` pour compiler).
+- `phase0/reference/evaluer_reference.py` et `resultats/` : évaluation de 114 générations ; modification d'image : scripts et rapports supprimés.
+- `.claude/commands/connect_portable.md` : créé.
 
 ## Hypothèses validées / invalidées
-- VALIDE : 37 tests automatiques passent en debug (30 unitaires, 7 de téléchargement) ; l'interface génère des images sur RTX 4060.
-- VALIDE : durées sur RTX 4060 : carré 12 s, paysage 16 s, portrait 102 s puis 17 s.
-- INVALIDE : `cargo test --release` complet (panic = "abort" du profil release) ; seule la cible `installation_reelle` se compile en release.
-- EN ATTENTE : essai sur le portable ; cause des temps lents du premier passage ; portrait 512x768 et paysage 768x512 non mesurés sur GTX 1650 Ti.
+- VALIDE : la référence est suivie de 0,30 à 0,85 (structure 0,99 à 0,71), ignorée dès 0,90 ; 0,50 et 0,60 donnent le même résultat.
+- INVALIDE : modifier un élément de la référence de façon fiable (8 cas sur 12 en jugement visuel, échec sur ciel et grandes surfaces).
+- EN ATTENTE : référence sur GTX 1650 Ti ; paysage avec une référence carrée moins fiable (maison : 0,39) sur 2 cas ; affichage de la nouvelle phrase d'aide non contrôlé.
 
 ## Prochaine étape exacte
-Obtenir le nom d'utilisateur et l'IP du portable (`activer_ssh.ps1` en administrateur), puis lancer `/install_portable <utilisateur@ip>`.
+Obtenir le nom d'utilisateur et l'IP du portable (`activer_ssh.ps1`), puis `/connect_portable` et `/install_portable <utilisateur@ip>`.
 
 ## Question bloquante pour la session suivante
 Aucune

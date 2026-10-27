@@ -1,0 +1,171 @@
+{
+ "resume": {
+  "temoin": {
+   "n": 12,
+   "structure": -0.01870636621357775,
+   "structure_autres": -0.0340042235358522,
+   "couleur": 0.6212945942265795,
+   "couleur_autres": 0.6205266203703704,
+   "id_structure": 0.25,
+   "id_couleur": 0.16666666666666666,
+   "id_les_deux": 0.16666666666666666
+  },
+  "e0.30": {
+   "n": 12,
+   "structure": 0.9944117856897634,
+   "structure_autres": 0.11598551252354267,
+   "couleur": 0.9907798883442265,
+   "couleur_autres": 0.6737278730936819,
+   "id_structure": 1.0,
+   "id_couleur": 1.0,
+   "id_les_deux": 1.0
+  },
+  "e0.50": {
+   "n": 12,
+   "structure": 0.9752364840272406,
+   "structure_autres": 0.12343076064324704,
+   "couleur": 0.978101171023965,
+   "couleur_autres": 0.6771915849673203,
+   "id_structure": 1.0,
+   "id_couleur": 1.0,
+   "id_les_deux": 1.0
+  },
+  "e0.70": {
+   "n": 12,
+   "structure": 0.9130690584421556,
+   "structure_autres": 0.12063554431583734,
+   "couleur": 0.9602668845315904,
+   "couleur_autres": 0.6796500544662308,
+   "id_structure": 1.0,
+   "id_couleur": 1.0,
+   "id_les_deux": 1.0
+  },
+  "e0.85": {
+   "n": 12,
+   "structure": 0.7139410261935355,
+   "structure_autres": 0.10739238170016525,
+   "couleur": 0.9121255446623094,
+   "couleur_autres": 0.6779473039215685,
+   "id_structure": 0.9166666666666666,
+   "id_couleur": 1.0,
+   "id_les_deux": 1.0
+  },
+  "e0.90": {
+   "n": 12,
+   "structure": -0.01870636621357775,
+   "structure_autres": -0.0340042235358522,
+   "couleur": 0.6212945942265795,
+   "couleur_autres": 0.6205266203703704,
+   "id_structure": 0.25,
+   "id_couleur": 0.16666666666666666,
+   "id_les_deux": 0.16666666666666666
+  },
+  "e0.95": {
+   "n": 12,
+   "structure": -0.0186973548904253,
+   "structure_autres": -0.03399594548112389,
+   "couleur": 0.6212962962962963,
+   "couleur_autres": 0.6205269607843138,
+   "id_structure": 0.25,
+   "id_couleur": 0.16666666666666666,
+   "id_les_deux": 0.16666666666666666
+  },
+  "e1.00": {
+   "n": 12,
+   "structure": -0.01869812803002994,
+   "structure_autres": -0.03399979272086736,
+   "couleur": 0.6212894880174292,
+   "couleur_autres": 0.6205221949891069,
+   "id_structure": 0.25,
+   "id_couleur": 0.16666666666666666,
+   "id_les_deux": 0.16666666666666666
+  }
+ },
+ "format": [
+  {
+   "ref": "theiere",
+   "format": "portrait",
+   "ecart": null,
+   "structure": -0.17298284816338522,
+   "couleur": 0.4880310457516339
+  },
+  {
+   "ref": "theiere",
+   "format": "portrait",
+   "ecart": 0.5,
+   "structure": 0.8561578582496462,
+   "couleur": 0.9394607843137255
+  },
+  {
+   "ref": "theiere",
+   "format": "portrait",
+   "ecart": 0.7,
+   "structure": 0.8552093508824119,
+   "couleur": 0.9253676470588236
+  },
+  {
+   "ref": "theiere",
+   "format": "paysage",
+   "ecart": null,
+   "structure": -0.20745991729796573,
+   "couleur": 0.5046977124183007
+  },
+  {
+   "ref": "theiere",
+   "format": "paysage",
+   "ecart": 0.5,
+   "structure": 0.9139942640997805,
+   "couleur": 0.945547385620915
+  },
+  {
+   "ref": "theiere",
+   "format": "paysage",
+   "ecart": 0.7,
+   "structure": 0.915394964582591,
+   "couleur": 0.9355187908496732
+  },
+  {
+   "ref": "maison",
+   "format": "portrait",
+   "ecart": null,
+   "structure": -0.2692731856147254,
+   "couleur": 0.4746119281045751
+  },
+  {
+   "ref": "maison",
+   "format": "portrait",
+   "ecart": 0.5,
+   "structure": 0.8437482881272012,
+   "couleur": 0.9592524509803921
+  },
+  {
+   "ref": "maison",
+   "format": "portrait",
+   "ecart": 0.7,
+   "structure": 0.7830960861390958,
+   "couleur": 0.9491217320261438
+  },
+  {
+   "ref": "maison",
+   "format": "paysage",
+   "ecart": null,
+   "structure": -0.064120510449295,
+   "couleur": 0.4299632352941176
+  },
+  {
+   "ref": "maison",
+   "format": "paysage",
+   "ecart": 0.5,
+   "structure": 0.3928193907776353,
+   "couleur": 0.9168709150326797
+  },
+  {
+   "ref": "maison",
+   "format": "paysage",
+   "ecart": 0.7,
+   "structure": 0.4422477861201586,
+   "couleur": 0.9087009803921569
+  }
+ ],
+ "manquants": []
+}

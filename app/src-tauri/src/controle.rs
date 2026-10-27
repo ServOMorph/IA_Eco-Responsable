@@ -90,6 +90,8 @@ pub fn generation_de_controle(moteur: &Moteur, sortie: &Path) -> Result<Rapport,
         hauteur: 512,
         graine: 42,
         sortie: sortie.to_path_buf(),
+        journal: sortie.with_extension("log"),
+        reference: None,
     };
     let generation = moteur.charger(&demande, &machine).map_err(|e| e.message())?;
     let duree = generation.attendre(DELAI_CONTROLE).map_err(|e| e.message())?;

@@ -43,6 +43,12 @@ h1 {
   font-size: 1.6rem;
 }
 
+.modele {
+  margin: -8px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -116,4 +122,140 @@ figcaption {
   margin-top: 6px;
   font-size: 0.9rem;
   opacity: 0.8;
+}
+
+select {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--bord);
+  border-radius: 8px;
+  padding: 8px 10px;
+  align-self: flex-start;
+}
+
+select option {
+  color: #1d1d1b;
+}
+
+.ligne {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form .ligne {
+  justify-content: flex-start;
+}
+
+button.petit {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.encart {
+  border: 1px solid var(--bord);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.encart p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+
+.avis {
+  color: var(--erreur);
+}
+
+progress {
+  width: 100%;
+  height: 12px;
+  accent-color: var(--accent);
+}
+
+#resultats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.vignette {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vignette img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--bord);
+  cursor: pointer;
+  background: var(--bord);
+}
+
+.vignette p {
+  margin: 0;
+  font-size: 0.85rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.vignette.indisponible {
+  opacity: 0.5;
+}
+
+button.danger {
+  color: var(--erreur);
+  align-self: flex-start;
+}
+
+figure button.danger {
+  margin-top: 8px;
+}
+
+fieldset.vertical {
+  flex-direction: column;
+  gap: 10px;
+}
+
+#reference-apercu {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--bord);
+}
+
+#reference-aide[hidden],
+#reference-choisie[hidden] {
+  display: none;
+}
+
+.aide {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.actions {
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+figure .actions button.danger {
+  margin-top: 0;
 }

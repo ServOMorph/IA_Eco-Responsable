@@ -11,8 +11,20 @@
   <body>
     <main>
       <h1>Générateur d'images</h1>
+      <p class="modele">Modèle : <span id="nom-modele">Z-Image Turbo (GGUF Q5_0)</span></p>
 
       <p id="alerte" class="alerte" hidden></p>
+
+      <section id="memoire" class="encart" aria-label="État de la mémoire">
+        <div class="ligne">
+          <strong>Mémoire</strong>
+          <button type="button" id="actualiser" class="secondaire petit">Actualiser</button>
+        </div>
+        <p id="memoire-ram">Mémoire vive : mesure en cours…</p>
+        <p id="memoire-vram">Mémoire vidéo : mesure en cours…</p>
+        <p id="memoire-avis" class="avis" hidden></p>
+        <p id="etat-modele">Modèle : libéré de la mémoire</p>
+      </section>
 
       <form id="formulaire">
         <label for="description">Décrivez l'image</label>
@@ -25,17 +37,43 @@
           <label><input type="radio" name="format" value="paysage" /> Paysage</label>
         </fieldset>
 
-        <button type="submit" id="bouton">Générer</button>
+        <fieldset id="reference" class="vertical">
+          <legend>Image de référence (expérimental)</legend>
+          <input type="file" id="fichier-reference" accept="image/png,image/jpeg,image/bmp" />
+          <div id="reference-choisie" class="ligne" hidden>
+            <img id="reference-apercu" alt="Image de référence" />
+            <button type="button" id="reference-retirer" class="secondaire petit">Retirer la référence</button>
+          </div>
+          <p id="reference-aide" class="aide" hidden>Le résultat reste très proche de la référence : le texte ne sert qu'à nuancer l'image.</p>
+        </fieldset>
+
+        <label for="nombre">Nombre d'images</label>
+        <select id="nombre">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+
+        <div class="ligne">
+          <button type="submit" id="bouton">Générer</button>
+          <button type="button" id="annuler" class="secondaire" hidden>Annuler et libérer la mémoire</button>
+        </div>
       </form>
 
+      <progress id="barre" max="100" value="0" hidden></progress>
       <p id="statut" role="status"></p>
 
-      <figure id="resultat" hidden>
-        <img id="image" alt="Image générée" />
-        <figcaption id="legende"></figcaption>
-      </figure>
+      <div id="resultats"></div>
 
-      <button type="button" id="dossier" class="secondaire">Ouvrir le dossier des images</button>
+      <section aria-label="Historique">
+        <div class="ligne">
+          <strong>Historique</strong>
+          <button type="button" id="dossier" class="secondaire petit">Ouvrir le dossier des images</button>
+        </div>
+        <p id="historique-vide" hidden>Aucune image enregistrée pour le moment.</p>
+        <div id="historique" class="grille"></div>
+      </section>
     </main>
   </body>
 </html>

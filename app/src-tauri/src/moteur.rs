@@ -7,12 +7,20 @@ use std::process::{Child, Command, Stdio};
 use std::time::{Duration, Instant};
 
 #[derive(Debug, Clone)]
+pub struct Reference {
+    pub image: PathBuf,
+    pub ecart: f32,
+}
+
+#[derive(Debug, Clone)]
 pub struct Demande {
     pub prompt: String,
     pub largeur: u32,
     pub hauteur: u32,
     pub graine: i64,
     pub sortie: PathBuf,
+    pub journal: PathBuf,
+    pub reference: Option<Reference>,
 }
 
 #[derive(Debug)]
@@ -23,7 +31,10 @@ pub enum ErreurMoteur {
     Lancement(String),
     Echec { code: Option<i32>, journal: PathBuf },
     Delai,
+    Annule,
 }
+
+pub const MESSAGE_ANNULE: &str = "Génération annulée.";
 
 impl ErreurMoteur {
     pub fn message(&self) -> String {
@@ -37,6 +48,7 @@ impl ErreurMoteur {
                 code.map(|c| c.to_string()).unwrap_or_else(|| "inconnu".into())
             ),
             ErreurMoteur::Delai => "La génération a dépassé le délai maximal et a été arrêtée.".into(),
+            ErreurMoteur::Annule => MESSAGE_ANNULE.into(),
         }
     }
 }
@@ -54,7 +66,7 @@ impl Moteur {
 
     pub fn arguments(&self, d: &Demande) -> Vec<String> {
         let m = &self.dossier_modeles;
-        vec![
+        let mut a = vec![
             "--diffusion-model".into(),
             m.join(modeles::DIFFUSION.nom).to_string_lossy().into_owned(),
             "--vae".into(),
@@ -80,7 +92,16 @@ impl Moteur {
             self.choix.peripherique.clone(),
             "-o".into(),
             d.sortie.to_string_lossy().into_owned(),
-        ]
+        ];
+        if let Some(r) = &d.reference {
+            a.extend([
+                "-i".into(),
+                r.image.to_string_lossy().into_owned(),
+                "--strength".into(),
+                format!("{:.2}", r.ecart),
+            ]);
+        }
+        a
     }
 
     pub fn verifier_garde_fou(&self, machine: &Machine) -> Result<(), ErreurMoteur> {
@@ -113,7 +134,10 @@ impl Moteur {
         if let Some(parent) = d.sortie.parent() {
             fs::create_dir_all(parent).map_err(|e| ErreurMoteur::Fichier(e.to_string()))?;
         }
-        let journal = d.sortie.with_extension("log");
+        let journal = d.journal.clone();
+        if let Some(parent) = journal.parent() {
+            fs::create_dir_all(parent).map_err(|e| ErreurMoteur::Fichier(e.to_string()))?;
+        }
         let out = File::create(&journal).map_err(|e| ErreurMoteur::Fichier(e.to_string()))?;
         let err = out.try_clone().map_err(|e| ErreurMoteur::Fichier(e.to_string()))?;
         let mut cmd = Command::new(self.executable());
@@ -140,7 +164,11 @@ pub struct Generation {
 }
 
 impl Generation {
-    pub fn attendre(mut self, delai: Duration) -> Result<Duration, ErreurMoteur> {
+    pub fn attendre(self, delai: Duration) -> Result<Duration, ErreurMoteur> {
+        self.attendre_avec(delai, &|| false)
+    }
+
+    pub fn attendre_avec(mut self, delai: Duration, annule: &dyn Fn() -> bool) -> Result<Duration, ErreurMoteur> {
         loop {
             match self.enfant.try_wait() {
                 Ok(Some(statut)) => {
@@ -154,6 +182,10 @@ impl Generation {
                 }
                 Ok(None) => {}
                 Err(e) => return Err(ErreurMoteur::Lancement(e.to_string())),
+            }
+            if annule() {
+                self.decharger();
+                return Err(ErreurMoteur::Annule);
             }
             if self.debut.elapsed() > delai {
                 self.decharger();
@@ -177,6 +209,35 @@ pub fn journal_indique_memoire(journal: &Path) -> bool {
     fs::read_to_string(journal)
         .map(|t| t.contains("cannot make enough memory") || t.contains("out of device memory"))
         .unwrap_or(false)
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Phase {
+    Demarrage,
+    Chargement,
+    Calcul,
+    Finalisation,
+}
+
+pub fn analyser_journal(texte: &str) -> (Phase, u32, u32) {
+    if texte.contains("decode_first_stage") || texte.contains("decoded, taking") {
+        return (Phase::Finalisation, 0, 0);
+    }
+    for segment in texte.split(['\r', '\n']).rev() {
+        let segment = segment.trim();
+        let Some(reste) = segment.strip_prefix('|') else { continue };
+        let Some(fin) = reste.find('|') else { continue };
+        let barre = &reste[..fin];
+        let Some(jeton) = reste[fin + 1..].split_whitespace().next() else { continue };
+        let Some((n, m)) = jeton.split_once('/') else { continue };
+        let (Ok(n), Ok(m)) = (n.parse::<u32>(), m.parse::<u32>()) else { continue };
+        if m == 0 {
+            continue;
+        }
+        let phase = if barre.contains('#') { Phase::Chargement } else { Phase::Calcul };
+        return (phase, n, m);
+    }
+    (Phase::Demarrage, 0, 0)
 }
 
 pub fn dossier_moteur(racine: &Path, backend: Backend) -> PathBuf {
@@ -208,7 +269,19 @@ mod tests {
     }
 
     fn demande() -> Demande {
-        Demande { prompt: "un chat".into(), largeur: 512, hauteur: 512, graine: 42, sortie: PathBuf::from("C:\\o\\a.png") }
+        Demande { prompt: "un chat".into(), largeur: 512, hauteur: 512, graine: 42, sortie: PathBuf::from("C:\\o\\a.png"), journal: PathBuf::from("C:\\j\\a.log"), reference: None }
+    }
+
+    #[test]
+    fn reference_ajoutee_aux_arguments() {
+        let mut d = demande();
+        assert!(!moteur().arguments(&d).contains(&"-i".to_string()));
+        d.reference = Some(Reference { image: PathBuf::from("C:\\r\\ref.png"), ecart: 0.6 });
+        let a = moteur().arguments(&d);
+        let pos = a.iter().position(|x| x == "-i").unwrap();
+        assert_eq!(a[pos + 1], "C:\\r\\ref.png");
+        let pos = a.iter().position(|x| x == "--strength").unwrap();
+        assert_eq!(a[pos + 1], "0.60");
     }
 
     #[test]
@@ -253,6 +326,30 @@ mod tests {
         assert!(journal_indique_memoire(&j));
         fs::write(&j, "[E] autre erreur").unwrap();
         assert!(!journal_indique_memoire(&j));
+    }
+
+    #[test]
+    fn journal_progression_analysee() {
+        assert_eq!(analyser_journal(""), (Phase::Demarrage, 0, 0));
+        let chargement = "[I] loading\r\n  |####################                              | 55/138 - 900.00MB/s\u{1b}[K\r";
+        assert_eq!(analyser_journal(chargement), (Phase::Chargement, 55, 138));
+        let calcul = format!("{chargement}\r\n  |======>                                           | 2/8 - 16.95it/s\u{1b}[K\r\n  |==========>                                       | 3/8 - 15.87it/s\u{1b}[K");
+        assert_eq!(analyser_journal(&calcul), (Phase::Calcul, 3, 8));
+        let fin = format!("{calcul}\n[I] latent 1 decoded, taking 1.23s --- image.cpp:620");
+        assert_eq!(analyser_journal(&fin).0, Phase::Finalisation);
+    }
+
+    #[test]
+    fn annulation_arrete_le_processus() {
+        let enfant = Command::new("cmd").args(["/C", "ping -n 30 127.0.0.1 > nul"]).spawn().unwrap();
+        let g = Generation {
+            enfant,
+            debut: Instant::now(),
+            sortie: PathBuf::from("inexistant.png"),
+            journal: PathBuf::from("inexistant.log"),
+        };
+        let r = g.attendre_avec(Duration::from_secs(60), &|| true);
+        assert!(matches!(r, Err(ErreurMoteur::Annule)));
     }
 
     #[test]
