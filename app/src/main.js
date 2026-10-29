@@ -237,7 +237,7 @@ function creerVignette(fiche) {
   const bouton = document.createElement("button");
   bouton.type = "button";
   bouton.className = "secondaire petit";
-  bouton.textContent = "Réutiliser le prompt";
+  bouton.textContent = "Réutiliser";
   bouton.addEventListener("click", () => reutiliser(fiche));
   const supprimer = creerBoutonSuppression(fiche, () => {
     document.querySelectorAll("#resultats figure").forEach((f) => {
@@ -249,7 +249,7 @@ function creerVignette(fiche) {
   const comme = document.createElement("button");
   comme.type = "button";
   comme.className = "secondaire petit";
-  comme.textContent = "Utiliser comme référence";
+  comme.textContent = "Comme référence";
   comme.addEventListener("click", () => {
     if (image.src) utiliserCommeReference(fiche, image.src);
   });
@@ -322,6 +322,12 @@ window.addEventListener("DOMContentLoaded", async () => {
     invoke("annuler").catch((e) => afficherAlerte(String(e)));
   });
   el("actualiser").addEventListener("click", actualiserMemoire);
+  document.querySelectorAll("a[data-externe]").forEach((lien) => {
+    lien.addEventListener("click", (evenement) => {
+      evenement.preventDefault();
+      invoke("plugin:opener|open_url", { url: lien.href }).catch((e) => afficherAlerte(String(e)));
+    });
+  });
   el("fichier-reference").addEventListener("change", choisirReference);
   el("reference-retirer").addEventListener("click", () => definirReference(null));
   el("dossier").addEventListener("click", () => {

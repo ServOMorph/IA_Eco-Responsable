@@ -4,76 +4,104 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Générateur d'images</title>
+    <title>Générateur d'images — SérénIA Tech</title>
     <script type="module" src="/main.js" defer></script>
   </head>
 
   <body>
+    <header class="entete">
+      <div class="entete__texte">
+        <p class="surtitre">IA locale et sobre</p>
+        <h1>Générateur d'images</h1>
+      </div>
+      <p class="modele"><span class="point"></span><span id="nom-modele">Z-Image Turbo (GGUF Q5_0)</span></p>
+    </header>
+
     <main>
-      <h1>Générateur d'images</h1>
-      <p class="modele">Modèle : <span id="nom-modele">Z-Image Turbo (GGUF Q5_0)</span></p>
+      <p id="alerte" class="alerte" role="alert" hidden></p>
 
-      <p id="alerte" class="alerte" hidden></p>
+      <div class="disposition">
+        <div class="colonne colonne--gauche">
+          <form id="formulaire" class="carte">
+            <div class="etape">
+              <label for="description" class="etape__titre"><span class="num">1</span>Décrivez l'image</label>
+              <textarea id="description" rows="3" placeholder="Exemple : une pomme rouge sur une table en bois"></textarea>
+            </div>
 
-      <section id="memoire" class="encart" aria-label="État de la mémoire">
-        <div class="ligne">
-          <strong>Mémoire</strong>
-          <button type="button" id="actualiser" class="secondaire petit">Actualiser</button>
-        </div>
-        <p id="memoire-ram">Mémoire vive : mesure en cours…</p>
-        <p id="memoire-vram">Mémoire vidéo : mesure en cours…</p>
-        <p id="memoire-avis" class="avis" hidden></p>
-        <p id="etat-modele">Modèle : libéré de la mémoire</p>
-      </section>
+            <fieldset class="etape formats">
+              <legend class="etape__titre"><span class="num">2</span>Choisissez le format</legend>
+              <div class="choix">
+                <label class="tuile"><input type="radio" name="format" value="carre" checked /><span class="forme forme--carre"></span><span>Carré</span></label>
+                <label class="tuile"><input type="radio" name="format" value="portrait" /><span class="forme forme--portrait"></span><span>Portrait</span></label>
+                <label class="tuile"><input type="radio" name="format" value="paysage" /><span class="forme forme--paysage"></span><span>Paysage</span></label>
+              </div>
+            </fieldset>
 
-      <form id="formulaire">
-        <label for="description">Décrivez l'image</label>
-        <textarea id="description" rows="3" placeholder="Exemple : une pomme rouge sur une table en bois"></textarea>
+            <div class="etape etape--ligne">
+              <label for="nombre" class="etape__titre"><span class="num">3</span>Nombre d'images</label>
+              <select id="nombre">
+                <option value="1" selected>1 image</option>
+                <option value="2">2 images</option>
+                <option value="3">3 images</option>
+                <option value="4">4 images</option>
+              </select>
+            </div>
 
-        <fieldset>
-          <legend>Format</legend>
-          <label><input type="radio" name="format" value="carre" checked /> Carré</label>
-          <label><input type="radio" name="format" value="portrait" /> Portrait</label>
-          <label><input type="radio" name="format" value="paysage" /> Paysage</label>
-        </fieldset>
+            <fieldset id="reference" class="etape vertical option">
+              <legend class="etape__titre">Image de référence <span class="badge">expérimental</span></legend>
+              <input type="file" id="fichier-reference" accept="image/png,image/jpeg,image/bmp" />
+              <div id="reference-choisie" class="ligne" hidden>
+                <img id="reference-apercu" alt="Image de référence" />
+                <button type="button" id="reference-retirer" class="secondaire petit">Retirer la référence</button>
+              </div>
+              <p id="reference-aide" class="aide" hidden>Le résultat reste très proche de la référence : le texte ne sert qu'à nuancer l'image.</p>
+            </fieldset>
 
-        <fieldset id="reference" class="vertical">
-          <legend>Image de référence (expérimental)</legend>
-          <input type="file" id="fichier-reference" accept="image/png,image/jpeg,image/bmp" />
-          <div id="reference-choisie" class="ligne" hidden>
-            <img id="reference-apercu" alt="Image de référence" />
-            <button type="button" id="reference-retirer" class="secondaire petit">Retirer la référence</button>
+            <div class="ligne actions-formulaire">
+              <button type="submit" id="bouton">Générer</button>
+              <button type="button" id="annuler" class="secondaire" hidden>Annuler et libérer la mémoire</button>
+            </div>
+          </form>
+
+          <section id="memoire" class="carte encart" aria-label="État de la mémoire">
+            <div class="ligne">
+              <h2>Mémoire de l'ordinateur</h2>
+              <button type="button" id="actualiser" class="secondaire petit">Actualiser</button>
+            </div>
+            <p id="memoire-ram">Mémoire vive : mesure en cours…</p>
+            <p id="memoire-vram">Mémoire vidéo : mesure en cours…</p>
+            <p id="memoire-avis" class="avis" hidden></p>
+            <p id="etat-modele" class="etat">Modèle : libéré de la mémoire</p>
+          </section>
+
+          <div class="zone-logo">
+            <img class="logo" src="assets/logo-serenia-tech.png" alt="SérénIA Tech" />
           </div>
-          <p id="reference-aide" class="aide" hidden>Le résultat reste très proche de la référence : le texte ne sert qu'à nuancer l'image.</p>
-        </fieldset>
-
-        <label for="nombre">Nombre d'images</label>
-        <select id="nombre">
-          <option value="1" selected>1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-
-        <div class="ligne">
-          <button type="submit" id="bouton">Générer</button>
-          <button type="button" id="annuler" class="secondaire" hidden>Annuler et libérer la mémoire</button>
         </div>
-      </form>
 
-      <progress id="barre" max="100" value="0" hidden></progress>
-      <p id="statut" role="status"></p>
+        <div class="colonne colonne--droite">
+          <section class="carte apercu" aria-label="Résultat">
+            <progress id="barre" max="100" value="0" hidden></progress>
+            <p id="statut" role="status"></p>
+            <div id="resultats"></div>
+          </section>
 
-      <div id="resultats"></div>
-
-      <section aria-label="Historique">
-        <div class="ligne">
-          <strong>Historique</strong>
-          <button type="button" id="dossier" class="secondaire petit">Ouvrir le dossier des images</button>
+          <section class="carte historique" aria-label="Historique">
+            <div class="ligne">
+              <h2>Historique</h2>
+              <button type="button" id="dossier" class="secondaire petit">Ouvrir le dossier des images</button>
+            </div>
+            <p id="historique-vide" class="aide" hidden>Aucune image enregistrée pour le moment.</p>
+            <div id="historique" class="grille"></div>
+          </section>
         </div>
-        <p id="historique-vide" hidden>Aucune image enregistrée pour le moment.</p>
-        <div id="historique" class="grille"></div>
-      </section>
+      </div>
     </main>
+
+    <footer class="pied">
+      <span>Les images sont générées sur votre ordinateur. Rien n'est envoyé sur internet.</span>
+      <a href="https://serenia-tech.fr/" data-externe>serenia-tech.fr</a>
+      <a href="mailto:sereniatech33@gmail.com" data-externe>sereniatech33@gmail.com</a>
+    </footer>
   </body>
 </html>

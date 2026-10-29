@@ -4,7 +4,7 @@ Interface open source pour installer et lancer des IA locales (chat, image) en u
 
 ## État actuel
 Phase 0 (faisabilité) terminée : Z-Image Turbo génère une image 512x512 en 67 s sur un portable à GPU de 4 Go de VRAM et 8 Go de RAM (GTX 1650 Ti), avec stable-diffusion.cpp en Vulkan.
-Phase 1 (cœur applicatif) en cours : détection de la machine, choix du backend, téléchargement avec reprise, cycle de vie du moteur et génération de contrôle sont écrits en Rust (Tauri) et testés ; une interface de génération (3 formats, 1 à 4 images, historique, annulation, image de référence) fonctionne sur un PC à RTX 4060 ; 40 tests unitaires. Déploiement actuel : installation assistée par SSH via la commande `/install_portable`. Reste l'essai sur le portable de référence.
+Phase 1 (cœur applicatif) en cours : détection de la machine, choix du backend, téléchargement avec reprise, cycle de vie du moteur et génération de contrôle sont écrits en Rust (Tauri) et testés ; interface de génération pour PC (3 formats, 1 à 4 images, historique, annulation, image de référence, charte SérénIA Tech) ; 40 tests unitaires. Déploiement actuel : installation assistée par SSH via `/install_portable`, essayée sur le portable de référence le 2026-10-29 (contrôle en 63,7 s). Reste : relevés depuis l'application sur le portable et validation des seuils du garde-fou.
 
 ## Cible du MVP
 Windows, interface en français, GPU de 4 Go de VRAM minimum, installation guidée depuis un lien de téléchargement.

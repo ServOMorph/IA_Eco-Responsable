@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6 — 2026-10-29
+
+### Ajouté
+- Interface pour PC : deux colonnes, charte du site SérénIA Tech (polices, couleurs), logo, liens du site et du mail ; fenêtre 1280x900.
+- Essai de `/install_portable` sur le portable de référence : installation et contrôle réussis (63,7 s, carte NVIDIA).
+- `installation_reelle.rs` : variable `IA_ECO_IGNORER_GARDE_RAM` (essai seulement).
+
+### Modifié
+- Seuil de RAM libre du garde-fou : 5 000 Mo remplacés par 1 500 Mo.
+
 ## v0.5 — 2026-10-27
 
 ### Ajouté

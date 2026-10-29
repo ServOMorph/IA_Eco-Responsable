@@ -3,7 +3,7 @@ use std::path::Path;
 
 pub const VRAM_MIN_MO: u64 = 3900;
 pub const RAM_MIN_MO: u64 = 7500;
-pub const RAM_LIBRE_LANCEMENT_MO: u64 = 5000;
+pub const RAM_LIBRE_LANCEMENT_MO: u64 = 1500;
 pub const VRAM_LIBRE_LANCEMENT_MO: u64 = 3000;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
@@ -389,7 +389,7 @@ mod tests {
     fn garde_fou() {
         assert!(garde_fou_memoire(6000, Some(3500)).is_ok());
         assert!(garde_fou_memoire(6000, None).is_ok());
-        assert_eq!(garde_fou_memoire(4000, Some(3500)), Err(Refus::RamLibre { dispo_mo: 4000 }));
+        assert_eq!(garde_fou_memoire(1000, Some(3500)), Err(Refus::RamLibre { dispo_mo: 1000 }));
         assert_eq!(garde_fou_memoire(6000, Some(2000)), Err(Refus::VramLibre { dispo_mo: 2000 }));
     }
 

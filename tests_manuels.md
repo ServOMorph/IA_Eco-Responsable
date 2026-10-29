@@ -1,7 +1,7 @@
 # Tests manuels en attente
 
-- Génération de contrôle réussie de bout en bout (Phase 1) : sur le PC de développement (RTX 4060), fermer navigateurs et applications utilisant la carte graphique pour libérer au moins 3 Go de VRAM, puis lancer `cargo test --test installation_reelle -- --ignored --nocapture` dans `app/src-tauri` (variable `IA_ECO_RACINE` pour changer le dossier, défaut `D:\Dev\ia-eco-test`). Attendu : image `sorties/controle.png` valide.
-- Même test sur le portable de référence (GTX 1650 Ti + Intel UHD, 8 Go de RAM) : vérifier que le périphérique Vulkan choisi est bien la carte NVIDIA et que l'image est produite en environ 67 s.
-- Vérifier sur le portable que le garde-fou ne refuse pas à tort avec 8 Go de RAM (seuil de RAM libre 5 000 Mo, à ajuster selon les mesures).
+- Génération de contrôle réussie de bout en bout (Phase 1) sur le PC de développement (RTX 4060) : fermer navigateurs et applications utilisant la carte graphique pour libérer au moins 3 Go de VRAM, puis lancer `cargo test --test installation_reelle -- --ignored --nocapture` dans `app/src-tauri` (variable `IA_ECO_RACINE` pour changer le dossier, défaut `D:\Dev\ia-eco-test`). Attendu : image `sorties/controle.png` valide.
+- Portable de référence : le contrôle a été observé le 2026-10-29 (63,7 s, périphérique Vulkan 0 = NVIDIA, image conforme), avec le garde-fou de RAM neutralisé pour l'essai ; à valider par l'utilisateur.
+- Garde-fou sur le portable : seuil de RAM libre abaissé à 1 500 Mo le 2026-10-29. Vérifier qu'il n'est plus refusé à tort, relever la RAM libre juste après une génération (modèle libéré ?) et confirmer ou ajuster le seuil de VRAM libre (3 000 Mo).
 - Image de référence sur le portable de référence : charger une image, générer, relever le temps, la VRAM et l'acceptation par le garde-fou ; essayer aussi un format paysage avec une référence carrée (résultat moins fiable sur le PC de développement).
-- Interface après compilation du 2026-10-27 : vérifier l'affichage de la phrase d'aide sous la référence (sans curseur).
+- Interface du 2026-10-29 dans la fenêtre Tauri : affichage sans défilement de la page, demi-écran propre, plusieurs images à la fois (2 à 4), ouverture dans le navigateur des liens du site et du mail du pied de page, phrase d'aide sous la référence (sans curseur).

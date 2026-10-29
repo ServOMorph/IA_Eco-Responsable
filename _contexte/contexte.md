@@ -10,13 +10,12 @@ Interface open source pour installer et lancer des IA locales (chat, image) en u
 - Chat : hors périmètre immédiat, l'image est le besoin prioritaire.
 
 ## État actuel (réécrit intégralement à chaque /close)
-Phase 0 terminée. Phase 1 en cours : cœur Rust et interface complète (3 formats, 1 à 4 images, historique, suppression, progression, annulation, mémoire, image de référence à écart fixe 0,50) fonctionnent sur la RTX 4060 ; 40 tests unitaires.
-Déploiement : installation assistée par SSH via `/install_portable` (jamais exécutée).
-Reste pour clore la Phase 1 : essai sur le portable de référence (connexion SSH à établir, voir `signals.md` et `tests_manuels.md`).
-Nettoyages du portable et du PC de développement en attente.
+Phase 0 terminée. Phase 1 en cours : cœur Rust et interface PC (deux colonnes, charte SérénIA Tech, 3 formats, 1 à 4 images, historique, image de référence) fonctionnent ; 40 tests unitaires.
+Essai portable du 2026-10-29 : installation par `/install_portable` et contrôle réussis (63,7 s, carte NVIDIA) ; seuil de RAM libre abaissé à 1 500 Mo ; génération depuis l'application jugée fonctionnelle par l'utilisateur, sans relevé.
+Reste pour clore la Phase 1 : relevés (temps, VRAM, RAM après génération), image de référence sur le portable, validation de `tests_manuels.md`.
+Nettoyages du portable (SSH rouvert) et du PC de développement en attente.
 
 ## Décisions structurantes (append only — 10 entrées max, 5 lignes max/entrée, archiver au-delà)
-- 2026-10-17 : Initialisation du protocole vibecoding.
 - 2026-10-20 : Périmètre MVP : Windows seul, sans signature (guide SmartScreen à l'écran), français seul, GPU de 4 Go de VRAM minimum toutes marques ; l'image est prioritaire sur le chat.
 - 2026-10-20 : Configuration retenue : Z-Image Turbo Q5_0, stable-diffusion.cpp Vulkan, `--mmap --offload-to-cpu --vae-tiling`. Mesure : 67 s en 512x512, 125 s en 768x768, 233 s en 1024x1024 sur GTX 1650 Ti. Détail dans `roadmap_installateur.md` (Phase 0).
 - 2026-10-20 : Q5_0 préféré à Q4_0 après validation visuelle (13 bon sur 14 contre 11 sur 15, pour 7 s de plus par image).
@@ -25,3 +24,5 @@ Nettoyages du portable et du PC de développement en attente.
 - 2026-10-22 : Stack Tauri + Rust retenue. Verdict machine Compatible / NonTesté / Incompatible (pas de « lent » sans mesure). Garde-fou avant lancement : 5 000 Mo de RAM libre, 3 000 Mo de VRAM libre (VRAM libre lue via le compteur Windows « GPU Adapter Memory », DXGI inutilisable).
 - 2026-10-25 : Réorientation : installation assistée par SSH sur le portable de la personne, en sa présence (commande `/install_portable`), plutôt qu'un installateur grand public. Interface minimale de génération livrée en avance sur la Phase 2. Chat hors périmètre.
 - 2026-10-27 : Image de référence gardée avec un écart fixe à 0,50 ; modification d'image abandonnée ; `sd-server` rejeté (7,7 Go de RAM) au profit de `sd-cli`.
+- 2026-10-29 : Seuil de RAM libre du garde-fou : 5 000 puis 2 500 Mo refusés sur le portable (2 400 à 2 900 Mo libres, Windows et services occupent environ 4 Go sur 8) ; retenu 1 500 Mo. Génération réussie à environ 2 900 Mo libres. VRAM libre inchangée (3 000 Mo).
+- 2026-10-29 : Interface pour PC avec la charte du site SérénIA Tech (deux colonnes, thème sombre vert, logo, liens du site et du mail) ; fenêtre 1280x900. Essais portable dans `C:\Users\raph6\Documents\ServOMorph\Test_Ia_Eco-Responsable`.

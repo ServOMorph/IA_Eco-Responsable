@@ -299,7 +299,7 @@ mod tests {
 
     #[test]
     fn garde_fou_refuse_si_ram_basse() {
-        let m = Machine { gpus: vec![moteur().choix.gpu], ram_totale_mo: 8000, ram_dispo_mo: 3000, disque_libre_mo: 100_000 };
+        let m = Machine { gpus: vec![moteur().choix.gpu], ram_totale_mo: 8000, ram_dispo_mo: 1000, disque_libre_mo: 100_000 };
         assert!(matches!(moteur().verifier_garde_fou(&m), Err(ErreurMoteur::Memoire(Refus::RamLibre { .. }))));
     }
 

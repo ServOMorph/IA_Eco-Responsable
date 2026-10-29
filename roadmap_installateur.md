@@ -46,7 +46,8 @@ Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmati
 - Tests unitaires et tests d'intégration inclus dans la phase.
 - État au 2026-10-22 : code et 31 tests automatiques en place dans `app/src-tauri/` ; installation et génération de contrôle réussies sur le PC de développement (RTX 4060, 84 s). Écarts : verdict « lent » remplacé par « NonTesté » (pas de mesure) ; pilote vérifié indirectement par la présence d'un périphérique Vulkan ; VRAM libre lue via le compteur Windows « GPU Adapter Memory ».
 - État au 2026-10-25 : 37 tests automatiques. Réorientation (2026-10-25) : installation assistée par SSH, en présence de la personne, via la commande `.claude/commands/install_portable.md` (jamais exécutée). Une interface minimale de génération (description, 3 formats, image affichée) existe déjà (`app/src/`, `app/src-tauri/src/appli.rs`) ; sur RTX 4060 : carré 12 s, paysage 16 s, portrait 102 s puis 17 s.
-- Reste avant [FAIT] : essai sur le portable de référence (double GPU, 8 Go de RAM) avec `/install_portable`, confirmation des seuils du garde-fou, voir `tests_manuels.md`.
+- État au 2026-10-29 : essai sur le portable de référence fait avec `/install_portable` (dossier `C:\Users\raph6\Documents\ServOMorph\Test_Ia_Eco-Responsable`) : 333 s de téléchargement, contrôle en 63,7 s sur la carte NVIDIA. Seuil de RAM libre abaissé de 5 000 à 1 500 Mo (génération réussie à environ 2 900 Mo libres). Interface refaite pour PC (charte SérénIA Tech, fenêtre 1280x900).
+- Reste avant [FAIT] : relevés depuis `app.exe` sur le portable (temps, VRAM, RAM après génération), confirmation des seuils, image de référence, validation de `tests_manuels.md`.
 
 **⏸ Checkpoint** — Demander à l'utilisateur de faire `/compact` avant de continuer.
 Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmation.
